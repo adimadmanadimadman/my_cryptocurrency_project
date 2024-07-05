@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>HodInfo</title>
+</head>
+
+<body onload="onLoad()" id="body">
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="navContainer">
+                <div class="logoContainer">
+                    <img src="https://hodlinfo.com/static/media/HODLINFO.8f78fc06.png" class="logo" />
+                </div>
+                <div class="currencyContainer">
+                    <div>
+                        <select id="type" class="form-select inrcurrency" style="border: none; width: 80px"
+                            onchange="changeType()">
+                            <option value="btc" selected>BTC</option>
+                            <option value="eth">ETH</option>
+                            <option value="usdt">USDT</option>
+                            <option value="xrp">XRP</option>
+                            <option value="trx">TRX</option>
+                            <option value="dash">DASH</option>
+                            <option value="zec">ZEC</option>
+                            <option value="xem">XEM</option>
+                            <option value="iost">IOST</option>
+                            <option value="win">WIN</option>
+                            <option value="bit">BIT</option>
+                            <option value="wrx">WRX</option>
+                        </select>
+                    </div>
+                    <div id="Buy-Button">
+                    </div>
+                </div>
+                <div class="flex-container">
+                    <div id="app" style="margin-right :20px;"></div>
+                    <div style="margin-right :20px;">
+                        <button class="telegram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telegram" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09" />
+                            </svg> Connect Telegram
+                        </button>
+                    </div>
+                    <div>
+                        <label class="switch">
+                            <input type="checkbox" checked id="switch">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Display Details of Cryptocurrency -->
+    <main>
+        <div class="flex-container" style="margin-bottom:-10px">
+            <div class="value-container">
+                <h1 class="heading">0.76 %</h1>
+                <p class="paragraph">5 Mins</p>
+            </div>
+            <div class="value-container">
+                <h1 class="heading">0.86 %</h1>
+                <p class="paragraph">1 Hour</p>
+            </div>
+            <div class="value-container" id="price">
+                <h1 class="paragraph">Best Price to Trade</h1>
+                <h1 style="color:white" id="head">2,87,522</h1>
+            </div>
+            <div class="value-container">
+                <h1 class="heading">5.41 %</h1>
+                <p class="paragraph">1 Day</p>
+            </div>
+            <div class="value-container">
+                <h1 class="heading">11.75 %</h1>
+                <p class="paragraph">7 Days</p>
+            </div>
+        </div>
+        <br />
+        <div style="overflow-x: auto; overflow-y: auto; text-align: center;">
+            <table class="table">
+                <thead>
+                    <tr style="color: rgb(112,114,121);" class="theaderClass">
+                        <th scope="col">#</th>
+                        <th scope="col">Platform</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Last Traded Price</th>
+                        <th scope="col">Buy /Sell Price</th>
+                        <th scope="col">Volume</th>
+                        <th scope="col">Base_unit</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <hr />
+    <!-- Footer -->
+    <footer class="fixedButton">
+        <div>
+            <button class="footer-button"> Add hodlinfo to home screen </button>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

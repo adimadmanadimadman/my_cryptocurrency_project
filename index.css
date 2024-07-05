@@ -1,0 +1,381 @@
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .paragraph {
+        font-size: 30px;
+    }
+
+    .trClass,
+    .theaderClass {
+        font-size: 24px;
+    }
+
+    table {
+        margin-left: 40px;
+    }
+
+    .logo {
+        width: 300px;
+    }
+
+    .currencyContainer,
+    .flex-container {
+        margin-top: 40px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .heading {
+        font-size: 18px;
+    }
+
+    .trClass {
+        font-size: 16px;
+    }
+
+    .theaderClass {
+        font-size: 14px;
+    }
+
+    #head {
+        font-size: 20px;
+    }
+
+    .paragraph {
+        font-size: 16px;
+    }
+
+    .avgPrice {
+        font-size: 10px;
+    }
+
+    table {
+        margin-left: 20px;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .currencyContainer {
+        margin-top: 40px;
+    }
+
+    .flex-container {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media screen and (max-width: 415px) {
+    .heading {
+        font-size: 14px;
+    }
+
+    .trClass {
+        font-size: 12px;
+    }
+
+    .theaderClass {
+        font-size: 10px;
+    }
+
+    .paragraph {
+        font-size: 14px;
+    }
+
+    .theme-light .fiat-crypto-table td h4 {
+        font-family: Oswald;
+        font-size: 14px;
+        margin: 0;
+        opacity: 1;
+    }
+
+    #head {
+        font-size: 18px;
+    }
+
+    .avgPrice {
+        font-size: 8px;
+    }
+
+    table {
+        margin-left: 10px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .currencyContainer {
+        margin-top: 10px;
+    }
+
+    .flex-container {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Body */
+body {
+    background-color: rgb(25, 29, 40);
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Theme change slider css */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(61, 198, 193);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: rgb(46, 50, 65);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* NavBar CSS */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.telegram {
+    background-color: rgb(61, 198, 193);
+    color: white;
+    height: 38px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Logo CSS */
+.logo {
+    height: 50px;
+}
+
+.logoContainer {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+/* Best Price Details CSS */
+.value-container {
+    text-align: center;
+
+}
+
+.heading {
+    color: rgb(61, 198, 193);
+}
+
+.paragraph {
+    color: rgb(112, 114, 121);
+}
+
+
+.inrcurrency {
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(46, 50, 65);
+    width: 120px;
+    height: 38px;
+    padding: 4px;
+    font-weight: 700;
+    border: none;
+}
+
+.currencyContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+
+
+
+
+/* timer CSS*/
+.base-timer {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.base-timer__svg {
+    width: 100%;
+    height: 100%;
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+}
+
+.base-timer__path-remaining {
+    stroke-width: 7px;
+    stroke-linecap: round;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+    color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+    color: orange;
+}
+
+.base-timer__path-remaining.red {
+    color: red;
+}
+
+.base-timer__label {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: green;
+    font-weight: bold;
+}
+
+/* Table CSS */
+
+.table th,
+.table thead th,
+.table td {
+    border: none;
+}
+
+.tbodyDark {
+    color: white;
+    background-color: rgb(46, 50, 65)
+}
+
+
+.tbodyLight {
+    color: black;
+    background-color: rgb(248, 249, 250);
+}
+
+table {
+    border-spacing: 0 10px;
+    border-collapse: separate;
+}
+
+.table {
+    width: 95%
+}
+
+.trClass {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Footer CSS */
+.flex-container1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.p1 {
+    font-size: 10px;
+}
+
+.footer-button {
+    border-color: rgb(61, 198, 193);
+    color: rgb(61, 198, 193);
+    background-color: rgb(25, 29, 40);
+}
+
+.footrtAddToHome {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.fixedButton {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.footer-button:hover {
+    background-color: rgb(61, 198, 193);
+    color: white;
+}
