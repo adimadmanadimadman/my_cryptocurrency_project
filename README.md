@@ -3,7 +3,7 @@ CRYPTOCURRENCY PROJECT
 
 USE OF PROJECT
   The site is a cryptocurrency trading platform comparison tool that provides key information for different platforms, helping users make informed decisions.
-  So data fetches from API and we store proccessed data in database.
+   data fetches from API and we store proccessed data in database.
 TECHNOLOGIES
   HTML
   CSS
